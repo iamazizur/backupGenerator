@@ -1,0 +1,953 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PnP.Core</name>
+    </assembly>
+    <members>
+        <member name="T:PnP.Core.AuthenticationError">
+            <summary>
+            Error class for authentication errors
+            </summary>
+        </member>
+        <member name="M:PnP.Core.AuthenticationError.#ctor(PnP.Core.ErrorType,System.Text.Json.JsonElement)">
+            <summary>
+            Constructs an <see cref="T:PnP.Core.AuthenticationError"/> instance
+            </summary>
+            <param name="type">Type of the error</param>
+            <param name="error">Error content as <see cref="T:System.Text.Json.JsonElement"/></param>
+        </member>
+        <member name="M:PnP.Core.AuthenticationError.#ctor(PnP.Core.ErrorType,System.String)">
+            <summary>
+            Constructs an <see cref="T:PnP.Core.AuthenticationError"/> instance
+            </summary>
+            <param name="type">Type of the error</param>
+            <param name="error">Error content as <see cref="T:System.String"/></param>
+        </member>
+        <member name="P:PnP.Core.AuthenticationError.Code">
+            <summary>
+            Error code
+            </summary>
+        </member>
+        <member name="P:PnP.Core.AuthenticationError.Message">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="P:PnP.Core.AuthenticationError.ErrorCodes">
+            <summary>
+            List of returned error codes
+            </summary>
+        </member>
+        <member name="P:PnP.Core.AuthenticationError.TimeStamp">
+            <summary>
+            Time the error happened
+            </summary>
+        </member>
+        <member name="P:PnP.Core.AuthenticationError.TraceId">
+            <summary>
+            Trace id
+            </summary>
+        </member>
+        <member name="P:PnP.Core.AuthenticationError.CorrelationId">
+            <summary>
+            Correlation id
+            </summary>
+        </member>
+        <member name="M:PnP.Core.AuthenticationError.ToString">
+            <summary>
+            Outputs a <see cref="T:PnP.Core.AuthenticationError"/> to a string representation
+            </summary>
+            <returns>String representation</returns>
+        </member>
+        <member name="T:PnP.Core.AuthenticationException">
+            <summary>
+            Authentication exception
+            </summary>
+        </member>
+        <member name="M:PnP.Core.AuthenticationException.#ctor(PnP.Core.ErrorType,System.String)">
+            <summary>
+            <see cref="T:PnP.Core.AuthenticationException"/> constructor
+            </summary>
+            <param name="type">Type of error</param>
+            <param name="message">Error message</param>
+        </member>
+        <member name="M:PnP.Core.AuthenticationException.#ctor(PnP.Core.ErrorType,System.String,System.Exception)">
+            <summary>
+            <see cref="T:PnP.Core.AuthenticationException"/> constructor
+            </summary>
+            <param name="type">Type of error</param>
+            <param name="message">Error message</param>
+            <param name="innerException">Inner exception (if any)</param>
+        </member>
+        <member name="M:PnP.Core.AuthenticationException.ToString">
+            <summary>
+            Outputs a <see cref="T:PnP.Core.AuthenticationException"/> to a string representation
+            </summary>
+            <returns>String representation</returns>
+        </member>
+        <member name="T:PnP.Core.BaseError">
+            <summary>
+            Base error information
+            </summary>
+        </member>
+        <member name="M:PnP.Core.BaseError.#ctor(PnP.Core.ErrorType)">
+            <summary>
+            Default base constructor/>
+            </summary>
+            <param name="type">Type of the error</param>
+        </member>
+        <member name="P:PnP.Core.BaseError.Type">
+            <summary>
+            <see cref="T:PnP.Core.ErrorType"/> of the error
+            </summary>
+        </member>
+        <member name="P:PnP.Core.BaseError.PnPCorrelationId">
+            <summary>
+            Correlation for a PnP Core SDK operation
+            </summary>
+        </member>
+        <member name="P:PnP.Core.BaseError.AdditionalData">
+            <summary>
+            Additional data linked to an error
+            </summary>
+        </member>
+        <member name="M:PnP.Core.BaseError.AddAdditionalData(System.String,System.Object)">
+            <summary>
+            Adds additional error data to this error as property/value pairs
+            </summary>
+            <param name="propertyName">Property to add</param>
+            <param name="propertyValue">Value to add</param>
+        </member>
+        <member name="T:PnP.Core.ClientError">
+            <summary>
+            Information about the client error
+            </summary>
+        </member>
+        <member name="M:PnP.Core.ClientError.#ctor(PnP.Core.ErrorType,System.String)">
+            <summary>
+            ClientError constructor, creates a <see cref="T:PnP.Core.ClientError"/> for the provided error type and message
+            </summary>
+            <param name="type">Type of the error</param>
+            <param name="message">Error message</param>
+        </member>
+        <member name="P:PnP.Core.ClientError.Message">
+            <summary>
+            Error message that was linked to the client error
+            </summary>
+        </member>
+        <member name="T:PnP.Core.ClientException">
+            <summary>
+            PnP Client exception
+            </summary>
+        </member>
+        <member name="M:PnP.Core.ClientException.#ctor">
+            <summary>
+            Default constructor for ClientException
+            </summary>
+        </member>
+        <member name="M:PnP.Core.ClientException.#ctor(System.String)">
+            <summary>
+            Constructor for ClientException
+            </summary>
+            <param name="message">The message of the exception</param>
+        </member>
+        <member name="M:PnP.Core.ClientException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor for ClientException
+            </summary>
+            <param name="message">The message of the exception</param>
+            <param name="innerException">The inner exception</param>
+        </member>
+        <member name="M:PnP.Core.ClientException.#ctor(PnP.Core.ErrorType,System.String)">
+            <summary>
+            <see cref="T:PnP.Core.ClientException"/> constructor 
+            </summary>
+            <param name="type">Type of the error</param>
+            <param name="message">Error message</param>
+        </member>
+        <member name="M:PnP.Core.ClientException.#ctor(PnP.Core.ErrorType,System.String,System.Exception)">
+            <summary>
+            <see cref="T:PnP.Core.ClientException"/> constructor 
+            </summary>
+            <param name="type">Type of the error</param>
+            <param name="message">Error message</param>
+            <param name="innerException">Inner exception to link to this exception</param>
+        </member>
+        <member name="M:PnP.Core.ClientException.ToString">
+            <summary>
+            Outputs a <see cref="T:PnP.Core.ClientException"/> to a string representation
+            </summary>
+            <returns>String representation</returns>
+        </member>
+        <member name="T:PnP.Core.CsomError">
+            <summary>
+            Csom service error
+            </summary>
+        </member>
+        <member name="M:PnP.Core.CsomError.#ctor(PnP.Core.ErrorType,System.Int32,System.Text.Json.JsonElement)">
+            <summary>
+            Default constructor for the <see cref="T:PnP.Core.SharePointRestError"/> error
+            </summary>
+            <param name="type"><see cref="T:PnP.Core.ErrorType"/> type of the error</param>
+            <param name="httpResponseCode">Http response code of the service request that failed</param>
+            <param name="errorJson">Json containing the error information</param>
+        </member>
+        <member name="P:PnP.Core.CsomError.ServerErrorCode">
+            <summary>
+            SharePoint server error code
+            </summary>
+        </member>
+        <member name="M:PnP.Core.CsomError.ToString">
+            <summary>
+            Outputs a <see cref="T:PnP.Core.CsomError"/> to a string representation
+            </summary>
+            <returns>String representation</returns>
+        </member>
+        <member name="T:PnP.Core.CsomServiceException">
+            <summary>
+            CSOM Service exception
+            </summary>
+        </member>
+        <member name="M:PnP.Core.CsomServiceException.#ctor(PnP.Core.ErrorType,System.Int32,System.Text.Json.JsonElement)">
+            <summary>
+            Creates a <see cref="T:PnP.Core.CsomServiceException"/> using the provided error type, http response code and CSOM request response
+            </summary>
+            <param name="type">Type of the error</param>
+            <param name="httpResponseCode">Http response code of the executed CSOM request</param>
+            <param name="response">JSON response of the executed CSOM request</param>
+        </member>
+        <member name="M:PnP.Core.CsomServiceException.ToString">
+            <summary>
+            Outputs a <see cref="T:PnP.Core.CsomServiceException"/> to a string representation
+            </summary>
+            <returns>String representation</returns>
+        </member>
+        <member name="T:PnP.Core.ErrorType">
+            <summary>
+            List of possible errors that can be thrown 
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.GraphServiceError">
+            <summary>
+            Graph service request returned an error
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.SharePointRestServiceError">
+            <summary>
+            SharePoint REST request returned an error
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.CsomServiceError">
+            <summary>
+            CSOM request returned an error
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.AzureADError">
+            <summary>
+            Authentication call to Azure AD failed
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.MissingAddApiHandler">
+            <summary>
+            Adding an item to Microsoft 365 using 'AddAsync' requires that the added model class has an AddApiHandler configured. See contribution docs to learn more
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.ModelMetadataIncorrect">
+            <summary>
+            There's incomplete model metadata configured. See contribution docs to learn more.
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.GraphBetaNotAllowed">
+            <summary>
+            Making a Graph Beta call is not allowed. See usage docs to learn more
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.Unsupported">
+            <summary>
+            Unsupported action
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.CollectionNotLoaded">
+            <summary>
+            Collection needs to be loaded once before you can use the paging methods for paged data retrieval
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.PropertyNotLoaded">
+            <summary>
+            The property you want to use was not yet loaded, first request it before using it
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.InstanceWasDeleted">
+            <summary>
+            This model instance was deleted, you can't use it anymore
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.LinqError">
+            <summary>
+            Something went wrong with issuing a linq query
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.ConfigurationError">
+            <summary>
+            There's an issue in the provided configuration data
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.InvalidParameters">
+            <summary>
+            Invalid parameters are sent it for a request
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.UnresolvedTokens">
+            <summary>
+            The API call still contains unresolved tokens
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.UnsupportedViaBatch">
+            <summary>
+            The requests in this batch are not vald
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.UnexpectedMappingType">
+            <summary>
+            The payload to map to object has an unexpected type
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.OfflineDataError">
+            <summary>
+            There's an issue with the available offline test data
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.TeamsAsyncOperationError">
+            <summary>
+            Something went wrong when doing an Teams async operation
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.TooManyRetries">
+            <summary>
+            Too many retries of an http request happened
+            </summary>
+        </member>
+        <member name="F:PnP.Core.ErrorType.TooManyBatchRetries">
+            <summary>
+            Too many retries of a request in a Graph batch happened
+            </summary>
+        </member>
+        <member name="T:PnP.Core.MicrosoftGraphError">
+            <summary>
+            Microsoft Graph service error
+            </summary>
+        </member>
+        <member name="M:PnP.Core.MicrosoftGraphError.#ctor(PnP.Core.ErrorType,System.Int32,System.Text.Json.JsonElement)">
+            <summary>
+            Default constructor for the <see cref="T:PnP.Core.MicrosoftGraphError"/> error
+            </summary>
+            <param name="type"><see cref="T:PnP.Core.ErrorType"/> type of the error</param>
+            <param name="httpResponseCode">Http response code of the service request that failed</param>
+            <param name="error"><see cref="T:System.Text.Json.JsonElement"/> holding the json data of the service error</param>
+        </member>
+        <member name="M:PnP.Core.MicrosoftGraphError.#ctor(PnP.Core.ErrorType,System.Int32,System.String)">
+            <summary>
+            Default constructor for the <see cref="T:PnP.Core.MicrosoftGraphError"/> error
+            </summary>
+            <param name="type"><see cref="T:PnP.Core.ErrorType"/> type of the error</param>
+            <param name="httpResponseCode">Http response code of the service request that failed</param>
+            <param name="response">String holding the information about the failed request</param>
+        </member>
+        <member name="M:PnP.Core.MicrosoftGraphError.ToString">
+            <summary>
+            Outputs a <see cref="T:PnP.Core.MicrosoftGraphError"/> to a string representation
+            </summary>
+            <returns>String representation</returns>
+        </member>
+        <member name="T:PnP.Core.MicrosoftGraphServiceException">
+            <summary>
+            Microsoft Graph Service exception
+            </summary>
+        </member>
+        <member name="M:PnP.Core.MicrosoftGraphServiceException.#ctor(PnP.Core.ErrorType,System.Int32,System.String)">
+            <summary>
+            Creates a <see cref="T:PnP.Core.MicrosoftGraphServiceException"/> using the provided error type, http response code and request response
+            </summary>
+            <param name="type">Type of the error</param>
+            <param name="httpResponseCode">Http response code of the executed Graph request</param>
+            <param name="response">Response of the executed Graph request</param>
+        </member>
+        <member name="M:PnP.Core.MicrosoftGraphServiceException.#ctor(PnP.Core.ErrorType,System.Int32,System.Text.Json.JsonElement)">
+            <summary>
+            Creates a <see cref="T:PnP.Core.MicrosoftGraphServiceException"/> using the provided error type, http response code and request response
+            </summary>
+            <param name="type">Type of the error</param>
+            <param name="httpResponseCode">Http response code of the executed Graph request</param>
+            <param name="error">Json error coming from the executed Graph request</param>
+        </member>
+        <member name="M:PnP.Core.MicrosoftGraphServiceException.ToString">
+            <summary>
+            Outputs a <see cref="T:PnP.Core.MicrosoftGraphServiceException"/> to a string representation
+            </summary>
+            <returns>String representation</returns>
+        </member>
+        <member name="T:PnP.Core.PnPException">
+            <summary>
+            Base class for the pnp core sdk exceptions
+            </summary>
+        </member>
+        <member name="M:PnP.Core.PnPException.#ctor(System.String)">
+            <summary>
+            Creates a PnP Exception
+            </summary>
+            <param name="message">Exception message</param>
+        </member>
+        <member name="M:PnP.Core.PnPException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a PnP Exception
+            </summary>
+            <param name="message">Exception message</param>
+            <param name="innerException">Inner exception to be linked to this <see cref="T:PnP.Core.PnPException"/></param>
+        </member>
+        <member name="M:PnP.Core.PnPException.#ctor">
+            <summary>
+            Creates a PnP Exception
+            </summary>
+        </member>
+        <member name="P:PnP.Core.PnPException.Error">
+            <summary>
+            Additional error information
+            </summary>
+        </member>
+        <member name="T:PnP.Core.ServiceError">
+            <summary>
+            Error information for a service error
+            </summary>
+        </member>
+        <member name="M:PnP.Core.ServiceError.#ctor(PnP.Core.ErrorType,System.Int32)">
+            <summary>
+            <see cref="T:PnP.Core.ServiceError"/> constructor using error type and http response code to create a backend service request error
+            </summary>
+            <param name="type">Type of the error</param>
+            <param name="httpResponseCode">Http response code of the error</param>
+        </member>
+        <member name="P:PnP.Core.ServiceError.HttpResponseCode">
+            <summary>
+            Http response code that was linked to the service error
+            </summary>
+        </member>
+        <member name="P:PnP.Core.ServiceError.Message">
+            <summary>
+            Error message that was linked to the service error
+            </summary>
+        </member>
+        <member name="P:PnP.Core.ServiceError.ClientRequestId">
+            <summary>
+            Client request id header returned in the response.
+            </summary>
+        </member>
+        <member name="P:PnP.Core.ServiceError.Code">
+            <summary>
+            Graph error code
+            </summary>
+        </member>
+        <member name="T:PnP.Core.ServiceException">
+            <summary>
+            Abstract class representing service errors
+            </summary>
+        </member>
+        <member name="M:PnP.Core.ServiceException.#ctor(System.String)">
+            <summary>
+            Creates a service request exception
+            </summary>
+            <param name="message">Exception message</param>
+        </member>
+        <member name="M:PnP.Core.ServiceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a service request exception
+            </summary>
+            <param name="message">Exception message</param>
+            <param name="innerException">Inner exception to be linked to this <see cref="T:PnP.Core.ServiceException"/></param>
+        </member>
+        <member name="M:PnP.Core.ServiceException.#ctor">
+            <summary>
+            Creates a service request exception
+            </summary>
+        </member>
+        <member name="M:PnP.Core.ServiceException.#ctor(PnP.Core.ErrorType,System.Int32,System.String)">
+            <summary>
+            Creates a service request exception
+            </summary>
+            <param name="type">Error type</param>
+            <param name="httpResponseCode">Http response code of the service request that got an error back</param>
+            <param name="message">Exception message</param>
+        </member>
+        <member name="T:PnP.Core.SharePointRestError">
+            <summary>
+            SharePoint Rest service error
+            </summary>
+        </member>
+        <member name="M:PnP.Core.SharePointRestError.#ctor(PnP.Core.ErrorType,System.Int32,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Default constructor for the <see cref="T:PnP.Core.SharePointRestError"/> error
+            </summary>
+            <param name="type"><see cref="T:PnP.Core.ErrorType"/> type of the error</param>
+            <param name="httpResponseCode">Http response code of the service request that failed</param>
+            <param name="response">Service request response content</param>
+            <param name="responseHeaders">Optional collection of request response headers</param>
+        </member>
+        <member name="P:PnP.Core.SharePointRestError.ServerErrorCode">
+            <summary>
+            SharePoint server error code
+            </summary>
+        </member>
+        <member name="M:PnP.Core.SharePointRestError.ToString">
+            <summary>
+            Outputs a <see cref="T:PnP.Core.SharePointRestError"/> to a string representation
+            </summary>
+            <returns>String representation</returns>
+        </member>
+        <member name="T:PnP.Core.SharePointRestServiceException">
+            <summary>
+            Microsoft SharePoint REST Service exception
+            </summary>
+        </member>
+        <member name="M:PnP.Core.SharePointRestServiceException.#ctor(PnP.Core.ErrorType,System.Int32,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Creates a <see cref="T:PnP.Core.SharePointRestServiceException"/> using the provided error type, http response code and request response
+            </summary>
+            <param name="type">Type of the error</param>
+            <param name="httpResponseCode">Http response code of the service request</param>
+            <param name="response">Response of the service request that errored out</param>
+            <param name="responseHeaders">Optional collection of request response headers</param>
+        </member>
+        <member name="M:PnP.Core.SharePointRestServiceException.ToString">
+            <summary>
+            Outputs a <see cref="T:PnP.Core.SharePointRestServiceException"/> to a string representation
+            </summary>
+            <returns>String representation</returns>
+        </member>
+        <member name="T:PnP.Core.Model.ConcreteTypeAttribute">
+            <summary>
+            Attribute to declare the concrete type for this interface
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.ConcreteTypeAttribute.Type">
+            <summary>
+            The actual concrete type implementing the interface
+            </summary>
+        </member>
+        <member name="T:PnP.Core.Model.GraphPropertyAttribute">
+            <summary>
+            Attribute to define how a model property maps to a Microsoft Graph field for usage in Microsoft Graph API calls
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphPropertyAttribute.Expandable">
+            <summary>
+            Is this property an expandable property?
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphPropertyAttribute.Beta">
+            <summary>
+            Model property to define that a property can only be handled using the Microsoft Graph beta endpoint
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphPropertyAttribute.Get">
+            <summary>
+            Url to get this field, needed in case the field cannot be loaded via an expand
+            </summary>
+        </member>
+        <member name="T:PnP.Core.Model.GraphTypeAttribute">
+            <summary>
+            Attribute used to decorate model classes that can be loaded via Microsoft Graph
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphTypeAttribute.Id">
+            <summary>
+            Defines the field that serves as the id field in Graph, typically this is the "id" field
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphTypeAttribute.Target">
+            <summary>
+            The actual target type for which this attribute is valid
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphTypeAttribute.Uri">
+            <summary>
+            URI that identifies an object in Microsoft Graph, used for get, update and delete requests
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphTypeAttribute.LinqGet">
+            <summary>
+            Get LINQ query API URI, overrides the global SharePointURI when specified
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphTypeAttribute.Get">
+            <summary>
+            Get API URI, overrides the global GraphURI when specified
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphTypeAttribute.Update">
+            <summary>
+            Update API URI, overrides the global GraphURI when specified
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphTypeAttribute.Delete">
+            <summary>
+            Delete API URI, overrides the global GraphURI when specified
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphTypeAttribute.OverflowProperty">
+            <summary>
+            Model property name that will hold dynamic data (e.g. List Item property/value pairs)
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.GraphTypeAttribute.Beta">
+            <summary>
+            Model property to define that a model can only be handled using the Microsoft Graph beta endpoint
+            </summary>
+        </member>
+        <member name="T:PnP.Core.Model.KeyPropertyAttribute">
+            <summary>
+            Indicates that this property is a key property, specifying the keyfield name is required
+            </summary>
+        </member>
+        <member name="T:PnP.Core.Model.PropertyAttribute">
+            <summary>
+            Base class for attributes that define how a model property maps to the field used in either SharePoint REST or Microsoft Graph
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.PropertyAttribute.FieldName">
+            <summary>
+            Name of the SharePoint field
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.PropertyAttribute.ExpandByDefault">
+            <summary>
+            Expand this property when there's a default get (a get without specifying the fields to load)
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.PropertyAttribute.JsonPath">
+            <summary>
+            Json path that contains the value we need, relative to the object loaded via FieldName
+            This works for simple JSON objects without arrays, delimiter will be a dot e.g. property.subproperty.subsub
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.PropertyAttribute.UseCustomMapping">
+            <summary>
+            Force a call out to the custom mapping handler for this field / the default mapping logic will not be applied
+            </summary>
+        </member>
+        <member name="T:PnP.Core.Model.SharePointPropertyAttribute">
+            <summary>
+            Attribute to define how a model property maps to a SharePoint field for usage in SharePoint REST calls
+            </summary>
+        </member>
+        <member name="T:PnP.Core.Model.SharePointTypeAttribute">
+            <summary>
+            Attribute used to decorate model classes that can be loaded via SharePoint REST
+            </summary>
+        </member>
+        <member name="M:PnP.Core.Model.SharePointTypeAttribute.#ctor(System.String)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="sharePointType">SharePoint REST type</param>
+        </member>
+        <member name="P:PnP.Core.Model.SharePointTypeAttribute.Type">
+            <summary>
+            Defines the OData name of this SharePoint REST type (e.g. SP.Web)
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.SharePointTypeAttribute.Target">
+            <summary>
+            The actual target type for which this attribute is valid
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.SharePointTypeAttribute.Uri">
+            <summary>
+            URI that identifies an object in SharePoint REST, used for get, update and delete requests
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.SharePointTypeAttribute.LinqGet">
+            <summary>
+            Get LINQ query API URI, overrides the global SharePointURI when specified
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.SharePointTypeAttribute.Get">
+            <summary>
+            Get API URI, overrides the global SharePointURI when specified
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.SharePointTypeAttribute.Update">
+            <summary>
+            Update API URI, overrides the global SharePointURI when specified
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.SharePointTypeAttribute.Delete">
+            <summary>
+            Delete API URI, overrides the global SharePointURI when specified
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.SharePointTypeAttribute.OverflowProperty">
+            <summary>
+            Model property name that will hold dynamic data (e.g. List Item property/value pairs)
+            </summary>
+        </member>
+        <member name="T:PnP.Core.Model.SystemPropertyAttribute">
+            <summary>
+            Indicates that a property is not a model property but a system property
+            </summary>
+        </member>
+        <member name="T:PnP.Core.Model.AddApiCall">
+            <summary>
+            Delegate for requesting the Api call for doing an ADD operation
+            </summary>
+            <returns>API call for adding a model entity</returns>
+        </member>
+        <member name="T:PnP.Core.Model.GetApiCallOverride">
+            <summary>
+            Delegate for overriding the default API call in case of a GET request
+            </summary>
+            <param name="input">Generated API call</param>
+            <returns>Changed API call</returns>
+        </member>
+        <member name="T:PnP.Core.Model.GetApiCallNonExpandableCollectionOverride">
+            <summary>
+            Delegate for overriding the default API call in case of a GET request for a non expandable collection
+            </summary>
+            <param name="input">Generated API call</param>
+            <returns>Changed API call</returns>
+        </member>
+        <member name="T:PnP.Core.Model.UpdateApiCallOverride">
+            <summary>
+            Delegate for overriding the default API call in case of a UPDATE request
+            </summary>
+            <param name="input">Generated API call</param>
+            <returns>Changed API call</returns>
+        </member>
+        <member name="T:PnP.Core.Model.DeleteApiCallOverride">
+            <summary>
+            Delegate for overriding the default API call in case of a DELETE request
+            </summary>
+            <param name="input">Generated API call</param>
+            <returns>Changed API call</returns>
+        </member>
+        <member name="T:PnP.Core.Model.BaseDataModel`1">
+            <summary>
+            Base class for all model classes
+            </summary>
+            <typeparam name="TModel">Model class</typeparam>
+        </member>
+        <member name="P:PnP.Core.Model.BaseDataModel`1.Metadata">
+            <summary>
+            Dictionary to access the domain model object Metadata
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.BaseDataModel`1.PnPContext">
+            <summary>
+            PnP Context
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.BaseDataModel`1.Parent">
+            <summary>
+            Returns the parent of this model
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.BaseDataModel`1.Log">
+            <summary>
+            Connected logger
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.BaseDataModel`1.Requested">
+            <summary>
+            Indicates whether this model was fetched from the server
+            </summary>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.ProcessResponseAsync(PnP.Core.Services.ApiResponse,System.Linq.Expressions.Expression{System.Func{System.Object,System.Object}}[])">
+            <summary>
+            This method processes an API response to populate the current domain model object
+            </summary>
+            <param name="apiResponse">The API response to process</param>
+            <param name="expressions">List of expressions to define the fields to retrieve during deserialization of the API response</param>
+            <returns>The deserialized domain model object</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.GetAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Retrieves a Domain Model object from the remote data source, eventually selecting custom properties or using a default set of properties
+            </summary>
+            <param name="expressions">The properties to select</param>
+            <returns>The Domain Model object</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.GetBatchAsync(PnP.Core.Services.Batch,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Batches the retrieval of a Domain Model object from the remote data source, eventually selecting custom properties or using a default set of properties
+            </summary>
+            <param name="batch">Batch add this request to</param>
+            <param name="selectors">The properties to select</param>
+            <returns>The Domain Model object</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.GetBatchAsync(PnP.Core.Services.Batch,PnP.Core.Services.ApiCall,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Batches the retrieval of a Domain Model object from the remote data source, eventually selecting custom properties or using a default set of properties
+            </summary>
+            <param name="batch">Batch add this request to</param>
+            <param name="apiOverride"></param>
+            <param name="selectors">The properties to select</param>
+            <returns>The Domain Model object</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.LoadAsync(System.Linq.Expressions.LambdaExpression[])">
+            <summary>
+            Loads a Domain Model object from the remote data source, eventually selecting custom properties or using a default set of properties
+            </summary>
+            <param name="selectors">The properties to select</param>
+            <returns>The Domain Model object</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.LoadAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Loads a Domain Model object from the remote data source, eventually selecting custom properties or using a default set of properties
+            </summary>
+            <param name="selectors">The properties to select</param>
+            <returns>The Domain Model object</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.LoadBatchAsync(PnP.Core.Services.Batch,System.Linq.Expressions.LambdaExpression[])">
+            <summary>
+            Batches the load of a Domain Model object from the remote data source, eventually selecting custom properties or using a default set of properties
+            </summary>
+            <param name="batch">Batch to use for the current request</param>
+            <param name="selectors">The properties to select</param>
+            <returns>The Domain Model object</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.LoadBatchAsync(PnP.Core.Services.Batch,System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Batches the load of a Domain Model object from the remote data source, eventually selecting custom properties or using a default set of properties
+            </summary>
+            <param name="batch">Batch to use for the current request</param>
+            <param name="selectors">The properties to select</param>
+            <returns>The Domain Model object</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.AddBatchAsync(PnP.Core.Services.Batch,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Adds a domain model instance
+            </summary>
+            <param name="batch">Batch add this request to</param>
+            <param name="keyValuePairs">Properties to control add</param>
+            <returns>The added domain model</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.AddAsync(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Adds a domain model instance
+            </summary>
+            <returns>The added domain model</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.AddBatch(PnP.Core.Services.Batch,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Adds a domain model instance
+            </summary>
+            <param name="batch">Batch add this request to</param>
+            <param name="keyValuePairs">Properties to control add</param>
+            <returns>The added domain model</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.Add(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Adds a domain model instance
+            </summary>
+            <returns>The added domain model</returns>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.UpdateBatchAsync">
+            <summary>
+            Updates a domain model
+            </summary>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.UpdateBatchAsync(PnP.Core.Services.Batch)">
+            <summary>
+            Updates a domain model
+            </summary>
+            <param name="batch">Batch add this request to</param>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.UpdateAsync">
+            <summary>
+            Updates a domain model
+            </summary>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.UpdateBatch">
+            <summary>
+            Updates a domain model
+            </summary>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.UpdateBatch(PnP.Core.Services.Batch)">
+            <summary>
+            Updates a domain model
+            </summary>
+            <param name="batch">Batch add this request to</param>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.Update">
+            <summary>
+            Updates a domain model
+            </summary>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.DeleteBatchAsync">
+            <summary>
+            Deletes a domain model
+            </summary>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.DeleteBatchAsync(PnP.Core.Services.Batch)">
+            <summary>
+            Deletes a domain model
+            </summary>
+            <param name="batch">Batch add this request to</param>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.DeleteAsync">
+            <summary>
+            Deletes a domain model
+            </summary>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.DeleteBatch">
+            <summary>
+            Deletes a domain model
+            </summary>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.DeleteBatch(PnP.Core.Services.Batch)">
+            <summary>
+            Deletes a domain model
+            </summary>
+            <param name="batch">Batch add this request to</param>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.Delete">
+            <summary>
+            Deletes a domain model
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.BaseDataModel`1.GetApiCallOverrideHandler">
+            <summary>
+            API call override handler for get requests
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.BaseDataModel`1.GetApiCallNonExpandableCollectionOverrideHandler">
+            <summary>
+            API call override handler for get requests for non expandable collections
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.BaseDataModel`1.MappingHandler">
+            <summary>
+            Handler that will fire when a property mapping does cannot be done automatically
+            </summary>
+        </member>
+        <member name="P:PnP.Core.Model.BaseDataModel`1.PostMappingHandler">
+            <summary>
+            Handler that will fire after the full json to model operation was done
+            </summary>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.BaseBatchRetrieveAsync(PnP.Core.Services.Batch,PnP.Core.Services.ApiCall,System.Func{PnP.Core.Services.FromJson,System.Object},System.Action{System.String},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Creates and adds a Get request to the given batch
+            </summary>
+            <param name="batch">Batch to add the request to</param>
+            <param name="apiOverride">Override for the API call</param>
+            <param name="selectors">Expressions needed to create the request</param>
+            <param name="fromJsonCasting">Delegate for type mapping when the request is executed</param>
+            <param name="postMappingJson">Delegate for post mapping</param>
+        </member>
+        <member name="P:PnP.Core.Model.BaseDataModel`1.AddApiCallHandler">
+            <summary>
+            API call handler for add requests
+            </summary>
+        </member>
+        <member name="M:PnP.Core.Model.BaseDataModel`1.BaseAddBatchAsync(PnP.Core.Services.Batch,PnP.Core.Services.ApiCall,System.Func{PnP.Core.Services.FromJson,System.Object},System.Action{System.String})">
+            <summary>
+     
